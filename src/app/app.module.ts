@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { RouterModule, Routes } from '@angular/router';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -12,8 +13,20 @@ import { FormsModule } from '@angular/forms';
 import { ForgotPasswordComponent } from './component/forgot-password/forgot-password.component';
 import { VarifyEmailComponent } from './component/varify-email/varify-email.component';
 
+
+const routes: Routes = [
+  { path: '', redirectTo: 'login', pathMatch: 'full' },
+  { path: 'login', component: LoginComponent },
+  { path: 'dashboard', component: DashboardComponent },
+  { path: 'register', component: RegisterComponent },
+  { path: 'varify-email', component: VarifyEmailComponent },
+  { path: 'forgot-password', component: ForgotPasswordComponent},
+];
+
 @NgModule({
+  // imports: [RouterModule.forRoot(routes)],
   declarations: [
+
     AppComponent,
     LoginComponent,
     RegisterComponent,
@@ -25,7 +38,8 @@ import { VarifyEmailComponent } from './component/varify-email/varify-email.comp
     BrowserModule,
     AppRoutingModule,
     AngularFireModule.initializeApp(environment.firebase),
-    FormsModule
+    FormsModule,
+    RouterModule.forRoot(routes)
   ],
   providers: [],
   bootstrap: [AppComponent]
