@@ -12,6 +12,8 @@ import { DashboardComponent } from './component/dashboard/dashboard.component';
 import { FormsModule } from '@angular/forms';
 import { ForgotPasswordComponent } from './component/forgot-password/forgot-password.component';
 import { VarifyEmailComponent } from './component/varify-email/varify-email.component';
+import { ErrorComponent } from './error/error.component';
+import { FileuploadComponent } from './component/fileupload/fileupload.component';
 
 
 const routes: Routes = [
@@ -20,7 +22,9 @@ const routes: Routes = [
   { path: 'dashboard', component: DashboardComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'varify-email', component: VarifyEmailComponent },
-  { path: 'forgot-password', component: ForgotPasswordComponent},
+  { path: 'forgot-password', component: ForgotPasswordComponent },
+  { path: 'file-upload', component: FileuploadComponent},
+  { path: '**', component: ErrorComponent}
 ];
 
 @NgModule({
@@ -32,7 +36,9 @@ const routes: Routes = [
     RegisterComponent,
     DashboardComponent,
     ForgotPasswordComponent,
-    VarifyEmailComponent
+    VarifyEmailComponent,
+    ErrorComponent,
+    FileuploadComponent
   ],
   imports: [
     BrowserModule,

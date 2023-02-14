@@ -1,6 +1,46 @@
-<!-- <app-register></app-register>
-<app-login></app-login>
-<app-dashboard></app-dashboard>
-<app-forgot-password></app-forgot-password> -->
 
-<router-outlet></router-outlet>
+
+
+
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#" style="font-size: 40px; font-weight: bold;">Abri Yusif </a>
+
+    <div class="collapse navbar-collapse nav justify-content-center" id="navbarNav" style="font-size: 30px;">
+      <ul class="navbar-nav nav justify-content-center">
+
+        <li class="nav-item">
+          <a class="nav-link" routerLink="register">Register</a>
+        </li>
+
+
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]=" 'login' ">Login</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" aria-current="page" [routerLink]=" ['dashboard'] ">Dashboard</a>
+        </li>
+
+
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]=" 'forgot-password' "> Forgot password </a>
+        </li>
+
+
+      </ul>
+    </div>
+    <hr>
+  </div>
+</nav>
+
+
+
+<div class="main-container">
+  <div class="component-container">
+    <router-outlet></router-outlet>
+  </div>
+
+</div>
+
+
